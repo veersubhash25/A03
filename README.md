@@ -15,5 +15,8 @@ Run node server.js to start the server.  (Hit CTRL-C to stop.)
 > node server.js
 ```
 
-Point your browser to `http://localhost:8081`. 
+Point your browser to `http://localhost:8081`.
 
+## Reference
+
+Based on http://javabeginnerstutorial.com/javascript-2/create-simple-chat-application-using-node-js-express-js-socket-io/
