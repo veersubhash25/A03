@@ -9,7 +9,7 @@ var path = require('path');
 // Initialize appication with route / (that means root of the application)
 app.get('/', function(req, res){
   app.use(express.static(path.join(__dirname)));
-  res.sendFile(path.join(__dirname, '../w06/public', 'index.html'));
+  res.sendFile(path.join(__dirname, '../w06/assets', 'index.html'));
 });
  
 // Register events on socket connection
@@ -20,7 +20,7 @@ io.on('connection', function(socket){
   socket.on('notifyUser', function(user){
     io.emit('notifyUser', user);  
   });
-});
+}); 
  
 // Listen for an application request on port 8081
 // use http listen, so we can provide a callback when listening begins
