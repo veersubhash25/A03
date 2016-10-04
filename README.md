@@ -1,4 +1,4 @@
-# M06 Chat Example
+# W06 Chat Example
 
 A simple chat demo using node.js, express, and socket.io
 
@@ -19,4 +19,11 @@ Point your browser to `http://localhost:8081`.
 
 ## Reference
 
-Based on http://javabeginnerstutorial.com/javascript-2/create-simple-chat-application-using-node-js-express-js-socket-io/
+http://javabeginnerstutorial.com/javascript-2/create-simple-chat-application-using-node-js-express-js-socket-io/
+
+http://socket.io/get-started/chat/
+
+https://github.com/socketio/socket.io
+
+http://socket.io/
+

@@ -1,30 +1,26 @@
-var express = require('express');
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var express = require('express');  // require express
+var app = express();  // create a request handler function
+var server = require('http').createServer(app);  // use our app to create a server
+var io = require('socket.io')(server); // pass in our http app server to get a Socket.io server
 var path = require('path');
-
-// based on http://javabeginnerstutorial.com/javascript-2/create-simple-chat-application-using-node-js-express-js-socket-io/
  
-// Initialize appication with route / (that means root of the application)
+// on a GET request to default page, do this.... 
 app.get('/', function(req, res){
   app.use(express.static(path.join(__dirname)));
   res.sendFile(path.join(__dirname, '../w06/assets', 'index.html'));
 });
  
-// Register events on socket connection
+// on a connection event, act as follows (socket interacts with client)
 io.on('connection', function(socket){ 
-  socket.on('chatMessage', function(from, msg){
-    io.emit('chatMessage', from, msg);  
+  socket.on('chatMessage', function(from, msg){  // on getting a chatMessage event
+    io.emit('chatMessage', from, msg);  // emit it to all connected clients
   });
-  socket.on('notifyUser', function(user){
-    io.emit('notifyUser', user);  
+  socket.on('notifyUser', function(user){  // on getting a notifyUser event
+    io.emit('notifyUser', user);  // emit to all 
   });
 }); 
  
-// Listen for an application request on port 8081
-// use http listen, so we can provide a callback when listening begins
-// use the callback to tell the user where to point their browser
-http.listen(8081, function(){
+// Listen for an app request on port 8081
+server.listen(8081, function(){
   console.log('listening on http://127.0.0.1:8081/');
 });
