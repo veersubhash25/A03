@@ -3,10 +3,12 @@ var app = express();  // create a request handler function
 var server = require('http').createServer(app);  // use our app to create a server
 var io = require('socket.io')(server); // pass in our http app server to get a Socket.io server
 var path = require('path');
+
+// include the static client-side files (.html, .css, .js)
+app.use(express.static(path.join(__dirname)));
  
-// on a GET request to default page, do this.... 
+// on a GET request to default page, serve up our index.html.... 
 app.get('/', function(req, res){
-  app.use(express.static(path.join(__dirname)));
   res.sendFile(path.join(__dirname, '../w06/assets', 'index.html'));
 });
  
