@@ -4,7 +4,7 @@ var socket = io()
 function submitfunction() {
   var from = $('#user').val()
   var message = $('#m').val()
-  if (message != '') {
+  if (message !== '') {
     socket.emit('chatMessage', from, message)
   }
   // what language and selector is used below?
@@ -23,23 +23,23 @@ function notifyTyping() {
 // how to react to a chatMessage event.................
 socket.on('chatMessage', function (from, msg) {
   var me = $('#user').val()
-  var color = (from == me) ? 'green' : '#009afd'
-  var from = (from == me) ? 'Me' : from
+  var color = (from === me) ? 'green' : '#009afd'
+  var from = (from === me) ? 'Me' : from
   $('#messages').append('<li><b style="color:' + color + '">' + from + '</b>: ' + msg + '</li>')
 })
 
 // how to react to a notifyUser event.................
 socket.on('notifyUser', function (user) {
   var me = $('#user').val()
-  if (user != me) {
+  if (user !== me) {
     $('#notifyUser').text(user + ' is typing ...')
   }
   // 10 seconds after typing stops, set the notify text to an empty string
   setTimeout(function () { $('#notifyUser').text('') }, 10000)
 })
 
-// when does the document.ready() function get executed?
-$(document).ready(function () {
+// when will this function get executed?
+$(function () {
   var name = makeid()
   $('#user').val(name)
   // emit a chatMessage event from the System along with a message
