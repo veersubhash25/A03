@@ -1,8 +1,9 @@
-var express = require('express')  // require express
-var app = express()  // create a request handler function
-var server = require('http').createServer(app)  // use our app to create a server
-var io = require('socket.io')(server) // pass in our http app server to get a Socket.io server
-var path = require('path')
+const express = require('express')  // require express
+const app = express()  // create a request handler function
+const server = require('http').createServer(app)  // use our app to create a server
+const io = require('socket.io')(server) // pass in our http app server to get a Socket.io server
+const path = require('path')
+const port = 8081
 
 // include the static client-side files (.html, .css, .js)
 app.use(express.static(path.join(__dirname)))
@@ -22,7 +23,7 @@ io.on('connection', function (socket) {
   })
 })
 
-// Listen for an app request on port 8081
-server.listen(8081, function () {
-  console.log('listening on http://127.0.0.1:8081/')
+// Listen for an app request on port - use backtics with variable
+server.listen(port, function () {
+  console.log(`listening on http://127.0.0.1:${port}/`)
 })

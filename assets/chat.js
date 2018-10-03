@@ -1,9 +1,9 @@
-var socket = io()
+const socket = io()
 
 // emit a new chatMessage event from the client......
 function submitfunction() {
-  var from = $('#user').val()
-  var message = $('#m').val()
+  let from = $('#user').val()
+  const message = $('#m').val()
   if (message !== '') {
     socket.emit('chatMessage', from, message)
   }
@@ -16,21 +16,21 @@ function submitfunction() {
 
 // emit a new notifyUser event from the client.........
 function notifyTyping() {
-  var user = $('#user').val()
+  const user = $('#user').val()
   socket.emit('notifyUser', user)
 }
 
 // how to react to a chatMessage event.................
 socket.on('chatMessage', function (from, msg) {
-  var me = $('#user').val()
-  var color = (from === me) ? 'green' : '#009afd'
-  var from = (from === me) ? 'Me' : from
+  const me = $('#user').val()
+  const color = (from === me) ? 'green' : '#009afd'
+  from = (from === me) ? 'Me' : from
   $('#messages').append('<li><b style="color:' + color + '">' + from + '</b>: ' + msg + '</li>')
 })
 
 // how to react to a notifyUser event.................
 socket.on('notifyUser', function (user) {
-  var me = $('#user').val()
+  const me = $('#user').val()
   if (user !== me) {
     $('#notifyUser').text(user + ' is typing ...')
   }
@@ -40,7 +40,7 @@ socket.on('notifyUser', function (user) {
 
 // when will this function get executed?
 $(function () {
-  var name = makeid()
+  const name = makeid()
   $('#user').val(name)
   // emit a chatMessage event from the System along with a message
   socket.emit('chatMessage', 'System', '<b>' + name + '</b> has joined the discussion')
@@ -48,9 +48,9 @@ $(function () {
 
 // utility function to create a new random user name....
 function makeid() {
-  var text = ''
-  var possible = 'abcdeghijklmnoprstuwxy'
-  for (var i = 0; i < 5; i++) {
+  let text = ''
+  const possible = 'abcdeghijklmnoprstuwxy'
+  for (let i = 0; i < 5; i++) {
     text += possible.charAt(Math.floor(Math.random() * possible.length))
   }
   return text
