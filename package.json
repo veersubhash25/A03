@@ -5,7 +5,7 @@
     "main": "server.js",
     "dependencies": {
         "express": "latest",
-        "socket.io": "latest"
+        "socket.io": "1.4.5"
     },
     "author": "Denise Case",
     "homepage": "https://bitbucket.org/professorcase/w06",

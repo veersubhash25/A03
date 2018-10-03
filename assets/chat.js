@@ -1,4 +1,5 @@
-const socket = io()
+
+var socket = io()
 
 // emit a new chatMessage event from the client......
 function submitfunction() {
