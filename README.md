@@ -23,9 +23,10 @@ https://bitbucket.org/professorcase/w06
 Open a command window in your w06 folder.
 
 Run **npm install** to install all the dependencies in the package.json file.
+This command installs a package, and any packages that it depends on. If the package has a package-lock or shrinkwrap file, the installation of dependencies will be driven by that, with an package.json taking precedence if both files exist
 
 Run **node server.js** or **node server** to start the server.  (Hit CTRL-C to stop.)
-
+Node.js is a JavaScript framework for writing server-side applications. In its simplest form it allows you to trigger small JavaScript programs from the command line without any browser involved. .
 ```Bash
 > npm install
 > node server

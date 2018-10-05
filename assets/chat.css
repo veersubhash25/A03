@@ -5,11 +5,11 @@
 }
 
 body {
-  font: 1.8em Helvetica, Arial;
+  font: 1.8em Helvetica, italic;
 }
 
 form {
-  background: #000;
+  background: rgb(238, 215, 6);
   padding: 3px;
   position: fixed;
   bottom: 0;
@@ -25,7 +25,7 @@ form input {
 
 form #button {
   color: #FFF;
-  background: #2D9F0B;
+  background: rgb(2, 149, 168);
   border: none;
   padding: 10px;
   width: 9%;
@@ -42,7 +42,7 @@ form #button {
 }
 
 #messages li:nth-child(odd) {
-  background: #eee;
+  background: rgb(238, 238, 238)206, 153, 153);
 }
 
 #notifyUser {
