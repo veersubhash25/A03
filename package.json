@@ -1,17 +1,19 @@
 {
-    "name": "w06Copy",
+    "name": "a03",
     "version": "0.0.1",
-    "description": "simple chat app",
-    "main": "server.js",
+    "description": "resume app",
+    "main": "app.js",
     "dependencies": {
         "express": "latest",
-        "socket.io": "1.4.5"
+        "morgan": "latest",
+        "body-parser": "latest",
+        "ejs": "latest"
     },
-    "author": "Jeevan Sai Subhash Veeramachaneni",
-    "homepage": "https://bitbucket.org/veersubhash25/w06",
+    "author": "Denise Case",
+    "homepage": "https://bitbucket.org/professorcase/a03",
     "repository": {
         "type": "git",
-        "url": "https://bitbucket.org/veersubhash25/w06"
+        "url": "https://bitbucket.org/professorcase/a03"
     },
     "license": "Apache-2.0"
 }
