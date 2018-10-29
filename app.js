@@ -32,13 +32,13 @@ app.get("/index", function (req, res) {
  })
  
 // 4 http GET /tic-tac-toe
-app.get("/tic-tac-toe", function (req, res) {
- res.render("tic-tac-toe.ejs")
+app.get("/age", function (req, res) {
+ res.render("age.ejs")
 })
 
 // 4 http GET /about
-app.get("/contact-me", function (req, res) {
- res.render("contact-me.ejs")
+app.get("/contact", function (req, res) {
+ res.render("contact.ejs")
 })
 
  
@@ -53,7 +53,7 @@ app.post("/contact-me", function (req, res) {
    
   var data = {
     from: 'cal App user<postmaster@sandbox1efc7e9a2bb247e89ea29eaaa62ff931.mailgun.org>',
-    to: 'pedditarakaraviteja@gmail.com',
+    to: 'veersubhash25@gmail.com',
     subject: req.body.firstname + " Sent you a message",
     text: req.body.subject
   };
